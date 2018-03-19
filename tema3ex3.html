@@ -1,0 +1,81 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body{background-color:#e9967a;
+                 font-family: 'Times New Roman', Times, serif;
+                 font-size: 16px;
+            }
+            legend{font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                    font-size: 24px;
+                    color:beige;
+                    text-shadow: 2px 2px 2px #000000;
+                    }
+            label{ /* text-transform: capitalize; */
+                    margin-left:1em; 
+                    font-weight: bold; 
+                    font-size: 18px;
+                    }
+            input{font-size: 13px;margin:5px;}
+            input:focus {outline:none !important;}
+            input[type="text"], select{border-radius:2px; border:3px inset #e9967a;}
+            ::placeholder{color: crimson; font-style: italic; padding-left:3px;}
+            *:focus {
+                outline: 0;
+              }
+            select{ margin:5px; 
+                    padding: 3px; 
+                    background-color: #f3dbcd;
+                    border-radius:5px;
+            }
+          
+        </style>
+        <script>
+			function maxInput(elem, e){
+				var elemNume = document.getElementById("input1");
+				var elemPrenume = document.getElementById("input2");
+                var elemEmail = document.getElementById("input3")
+                
+				console.log(elemNume);
+				console.log(elemPrenume);
+
+				if(elemNume.value.length > elemPrenume.value.length){
+					elemEmail.value= elemNume.value; 
+				}else if(elemNume.value.length < elemPrenume.value.length){
+                    elemEmail.value= elemPrenume.value; 
+                }
+                else{
+                    elemEmail.value= ""; 			 
+				}
+                e.preventDefault();
+				console.log(elemNume.value);
+				console.log(elemPrenume.value);
+				console.log(elemEmail.value);
+            }        
+		</script>
+    </head>
+    <body>
+        <form method="post" onsubmit="maxInput(this,event);">
+            <fieldset style="border: 3px inset #0f0505;">
+                <legend style="border: 2px dotted #f8f5f5;border-radius: 5px;padding:5px;">Chestionar: </legend>
+                    <label for="input1">Nume1:</label> 
+                    <input name="numeleMeu" id="input1" type="text"><br/>
+		
+                    <label for="input2">Nume2:</label> 
+                    <input name="prenumeleMeu" id="input2" type="text"><br/>
+                    
+                    <label for="input3">CelMaiLungNume:</label>
+                    <input type="text" name="email" id="input3"/><br/>
+
+        <input type="submit" name="submit" value="Submit" />  <br/>
+
+      
+	 </fieldset>
+        </form>
+    </body>
+</html>

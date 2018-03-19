@@ -1,0 +1,72 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body{background-color:#e9967a;
+                 font-family: 'Times New Roman', Times, serif;
+                 font-size: 16px;
+            }
+            legend{font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                    font-size: 24px;
+                    color:beige;
+                    text-shadow: 2px 2px 2px #000000;
+                    }
+            label{ /* text-transform: capitalize; */
+                    margin-left:1em; 
+                    font-weight: bold; 
+                    font-size: 18px;
+                    }
+            input{font-size: 13px;margin:5px;}
+            input:focus {outline:none !important;}
+            input[type="text"], select{border-radius:2px; border:3px inset #e9967a;}
+            ::placeholder{color: crimson; font-style: italic; padding-left:3px;}
+            *:focus {
+                outline: 0;
+              }
+            select{ margin:5px; 
+                    padding: 3px; 
+                    background-color: #f3dbcd;
+                    border-radius:5px;
+            }
+          
+        </style>
+        <script>
+			function validareInput(elem, e){
+				var elemNume = document.getElementById("nume");
+				var elemPrenume = document.getElementById("prenume");
+                
+                e.preventDefault();
+				console.log(elemNume);
+				console.log(elemPrenume);
+
+				if(elemNume.value === elemPrenume.value){
+					elemNume.style.backgroundColor="green"; 
+                    elemPrenume.style.backgroundColor="green";
+				}else{
+					elemNume.style.backgroundColor="";	
+                    elemPrenume.style.backgroundColor="";				 
+				}
+				console.log(elemNume.value);
+				console.log(elemPrenume.value);
+            }
+		</script>
+    </head>
+    <body>
+        <form method="post" onsubmit="validareInput(this,event);">
+            <fieldset style="border: 3px inset #0f0505;">
+                <legend style="border: 2px dotted #f8f5f5;border-radius: 5px;padding:5px;">Chestionar: </legend>
+                    <label for="nume">Input1:</label> 
+                    <input name="numeleMeu" id="nume" type="text"><br/>
+		
+                    <label for="prenume">Input2:</label> 
+                    <input name="prenumeleMeu" id="prenume" type="text"><br/>
+        <input type="submit" name="submit" value="Submit" />  
+	 </fieldset>
+        </form>
+    </body>
+</html>

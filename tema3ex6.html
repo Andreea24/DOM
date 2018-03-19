@@ -1,0 +1,70 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body{background-color:#e9967a;
+                 font-family: 'Times New Roman', Times, serif;
+                 font-size: 16px;
+            }
+            legend{font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                    font-size: 24px;
+                    color:beige;
+                    text-shadow: 2px 2px 2px #000000;
+                    }
+            label{ /* text-transform: capitalize; */
+                    margin-left:1em; 
+                    font-weight: bold; 
+                    font-size: 18px;
+                    }
+            input{font-size: 13px;margin:5px;}
+            input:focus {outline:none !important;}
+            input[type="text"], select{border-radius:2px; border:3px inset #e9967a;}
+            ::placeholder{color: crimson; font-style: italic; padding-left:3px;}
+            *:focus {
+                outline: 0;
+              }
+            select{ margin:5px; 
+                    padding: 3px; 
+                    background-color: #f3dbcd;
+                    border-radius:5px;
+            }
+           #count{
+                    border-left: 3px solid rgb(94, 37, 37);
+                    background-color: rgb(207, 206, 206);
+                    max-width: 2%;
+                    font-size: 14px;
+                    margin-left:16.8em;
+                    margin-top: -0.48em;
+                    padding:5px 3px;
+           }
+        </style>
+    <script>
+             function maxzece(elem, e){
+                var elemNume = document.getElementById("nume");
+                var x = document.getElementById("count");
+                if(elemNume.value.length > 9){
+                        e.preventDefault();}
+
+                x.innerHTML = elem.value.length;                    
+                 if (x.innerHTML == 10) {    
+                        x.style.color = "red";  
+                    }else{ x.style.color=""}        
+                }
+     </script>
+</head>
+<body>
+     <form>
+        <fieldset style="border: 3px inset #0f0505;">
+                 <legend style="border: 2px dotted #f8f5f5;border-radius: 5px;padding:5px;">Chestionar: </legend>
+                    <label for="nume">Input1:</label> 
+                    <input name="numeleMeu" id="nume" type="text" onkeypress="maxzece(this, event)"><br/>
+                    <span><div id="count">0</div></span>
+        </fieldset>
+    </form>
+</body>
+</html>
